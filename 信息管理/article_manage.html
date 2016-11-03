@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台欢迎页</title>
+	<link rel="stylesheet" href="../css/reset.css" />
+	<link rel="stylesheet" href="../css/content.css" />
+</head>
+<body marginwidth="0" marginheight="0" style="overflow: hidden;">
+	<div class="container">
+		<div class="public-nav">您当前的位置：<a href="">管理首页</a>><a href="">信息列表</a></div>
+		<div class="public-content">
+			<div class="clearfix"></div>
+			<div class="public-content-cont">
+				<table class="public-cont-table" id="table1">
+					<thead>
+						<tr>
+							<th style="width:5%">11</th>
+							<th style="width:5%">22</th>
+							<th style="width:35%">33</th>
+							<th style="width:5%">44</th>
+							<th style="width:5%">55</th>
+							<th style="width:5%">66</th>
+							<th style="width:10%">77</th>						
+							<th style="width:15%">88</th>
+						</tr>
+					</thead>
+					<tbody id="t_tbody">
+						<tr id="t_tr">
+							<td><input type="checkbox" /></td>
+							<td>40</td>						
+							<td><img class="state-img" src="../images/img.jpg" /></td>
+							<td><span style="color:#999">大图</span></td>
+							<td><span style="color:#6bc095">已审核</span></td>
+							<td><span style="color:#999">0</span></td>
+							<td><span style="color:#999">2016-7-6</span></td>
+							<td>
+								<div class="table-fun">
+									<a href="">修改</a>
+									<a href="">删除</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="page">
+				<form action="" method="get">
+				共<span>42</span>个站点
+					<a href="">首页</a>
+					<a href="">上一页</a>
+					<a href="">下一页</a>
+					第<span style="color:red;font-weight:600">12</span>页
+					共<span style="color:red;font-weight:600">120</span>页
+					<input type="text" class="page-input">
+					<input type="submit" class="page-btn" value="跳转">
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery-1.9.1.js"></script>
+	<script src="../js/jquery.freezeheader.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			$("#table1").freezeHeader({'height':'350px'});
+			var tr = $("#t_tbody").html();
+		});
+	</script>
+</body>
+</html>

@@ -5,65 +5,45 @@
 	<title>后台欢迎页</title>
 	<link rel="stylesheet" href="../css/reset.css" />
 	<link rel="stylesheet" href="../css/content.css" />
+	<link rel="stylesheet" type="text/css" href="../css/myUtil.css"/>
 </head>
 <body marginwidth="0" marginheight="0" style="overflow: hidden;">
 	<div class="container">
-		<div class="public-nav">您当前的位置：<a href="">管理首页</a>><a href="">信息列表</a></div>
+		<div class="public-nav">您当前的位置：<a href="javascript:$('#div_ss').css('display','block');$('#ly').css('display','block');">管理首页</a>><a href="">信息列表</a></div>
 		<div class="public-content">
 			<div class="clearfix"></div>
-			<div class="public-content-cont">
-				<table class="public-cont-table" id="table1">
-					<thead>
-						<tr>
-							<th style="width:5%">11</th>
-							<th style="width:5%">22</th>
-							<th style="width:35%">33</th>
-							<th style="width:5%">44</th>
-							<th style="width:5%">55</th>
-							<th style="width:5%">66</th>
-							<th style="width:10%">77</th>						
-							<th style="width:15%">88</th>
-						</tr>
-					</thead>
-					<tbody id="t_tbody">
-						<tr id="t_tr">
-							<td><input type="checkbox" /></td>
-							<td>40</td>						
-							<td><img class="state-img" src="../images/img.jpg" /></td>
-							<td><span style="color:#999">大图</span></td>
-							<td><span style="color:#6bc095">已审核</span></td>
-							<td><span style="color:#999">0</span></td>
-							<td><span style="color:#999">2016-7-6</span></td>
-							<td>
-								<div class="table-fun">
-									<a href="">修改</a>
-									<a href="">删除</a>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="page">
-				<form action="" method="get">
-				共<span>42</span>个站点
-					<a href="">首页</a>
-					<a href="">上一页</a>
-					<a href="">下一页</a>
-					第<span style="color:red;font-weight:600">12</span>页
-					共<span style="color:red;font-weight:600">120</span>页
-					<input type="text" class="page-input">
-					<input type="submit" class="page-btn" value="跳转">
-				</form>
-			</div>
+			<div class="public-content-cont"></div>
+			<div class="page" id="page"></div>
 		</div>
+	</div>
+	<div id="ly" class="grayBackground">
+		<div style="display: none;height: 300px;width: 80px;z-index: 3;position: absolute;top: 100px;left: 100px;" id="div_ss">
+		sdfdf
+		<input type="button" onclick="$('#div_ss').css('display','none');$('#ly').css('display','none');" value="dddd"/>
+	</div>
 	</div>
 	<script src="../js/jquery-1.9.1.js"></script>
 	<script src="../js/jquery.freezeheader.js"></script>
+	<script src="../js/table.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jquery.page.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		$().ready(function () {
-			$("#table1").freezeHeader({'height':'350px'});
-			var tr = $("#t_tbody").html();
+			
+			var table_th_style_width = new Array("4%","7%","7%","15%","7%"
+				,"5%","10%","10%","15%","5%","15%");
+			
+			//var tr = $("#t_tbody").html();
+			ajax_page = function(page_num,numbers){
+				$(document).Table('.public-content-cont','re',numbers,null,['排序','省份','城市','医院','项目经理'
+					,'ETL','开始时间','HIS','APP版本(8.0以上版本)','模式','操作'],[[22,11,22,22,22,22,22,22,22,22,22]]);
+				$("#re").addClass("public-cont-table");
+				$.each(table_th_style_width, function(i ,item) {
+					$("#re th:eq("+i+"),#bank th:eq("+i+")").css({"width":item});
+				});
+				$("#re").freezeHeader({'height':'355px'});
+				$(document).PaginBar('page',150,numbers,ajax_page);
+			}
+			ajax_page(1,5);
 		});
 	</script>
 </body>

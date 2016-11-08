@@ -32,7 +32,6 @@ Version: 1.0.5
                     obj.divScroll = '<div id="hdScroll' + obj.id + '" style="height: ' + params.height + '; overflow-y: auto">';
                     obj.closeDivScroll = '</div>';
                 }
-
                 obj.header = obj.grid.find('thead');
 
                 if (params && params.height !== undefined) {
@@ -100,10 +99,9 @@ Version: 1.0.5
             });
 
             tabela.append('<thead>' + obj.header.html() + '</thead>');
-
             obj.container.append(tabela);
             obj.container.width(obj.header.width());
-            obj.container.height(obj.header.height);
+            obj.container.height(obj.header.height());
             obj.container.find('th').each(function (index) {
                 var cellWidth = obj.grid.find('th').eq(index).width();
                 $(this).css('width', cellWidth);
@@ -112,7 +110,7 @@ Version: 1.0.5
             obj.container.css("visibility", "visible");
             if (params && params.height !== undefined) {
             	obj.container.css("position", "absolute");
-                obj.container.css("top", (obj.scroller.offset().top - obj.header.height) + "px");
+                obj.container.css("top", obj.divScroll.offset().top + "px");
             } else {
                 obj.container.css("top", "0px");
                 obj.container.css("position", "fixed");

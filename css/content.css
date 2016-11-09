@@ -5,8 +5,8 @@ body{background: #fff;}
     background: #FFFFFF;
 }
 .public-nav{
-	height: 28px;
-	line-height: 28px;
+	height: 32px;
+	line-height: 32px;
 	border-bottom: 1px solid #ddd;
     padding-left: 8px;
 }
@@ -49,8 +49,8 @@ body{background: #fff;}
 }
 .form-group .form-input-txt{
 	width:30%;
-	height: 32px;
-	line-height: 32px;
+	height: 28px;
+	line-height: 28px;
 	border-radius: 8px;
 	border:1px solid #ccc;
 	padding-left: 10px;

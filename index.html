@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/public.css">
 </head>
-<body>
+<body id="body">
 <div class="public-header-warrp">
 	<div class="public-header">
 		<div class="content">
@@ -51,7 +51,7 @@
 					<a href="javascript:;">信息管理</a>
 					<div class="ifame-item-sub">
 						<ul>
-							<li><a href="信息管理/article_manage.html" target="content">列表管理</a>|<a href="信息管理/article_add.html" target="content">添加</a></li>
+							<li><a href="信息管理/article_manage.html" target="content">列表管理</a></li>
 							<li><a href="信息管理/cate_manage.html" target="content">分类管理</a></li>
 						</ul>
 					</div>
@@ -68,7 +68,8 @@
 		</div>
 		<!-- 右侧内容展示部分 -->
 		<div class="public-ifame-content">
-			<iframe name="content" src="main.html" frameborder="0" id="mainframe" scrolling="yes" marginheight="0" marginwidth="0" width="100%" style="height: 500px;"></iframe>
+			<iframe name="content" id="mainframe" src="main.html" frameborder="0" id="mainframe" scrolling="yes" marginheight="0" 
+				marginwidth="0" width="100%" style="min-height: 500px;"></iframe>
 		</div>
 	</div>
 </div>

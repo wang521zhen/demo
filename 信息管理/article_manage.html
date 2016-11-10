@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/content.css" />
 		<link rel="stylesheet" type="text/css" href="../css/myUtil.css" />
+		<link rel="stylesheet" type="text/css" href="../css/combo.select.css"/>
 	</head>
 
 	<body marginwidth="0" marginheight="0" style="overflow: hidden;">
@@ -38,16 +39,27 @@
 				<div style="padding-left: 15px;">
 					<form id="div_form">
 						<div class="form-group">
-							<label for="">省份</label>
-							<input class="form-input-txt" type="text" name="" value="" />
+								<label for="">省份</label>
+							
+								<input class="form-input-txt" type="text" name="" value="" id="sf"/>
 						</div>
 						<div class="form-group">
 							<label for="">城市</label>
 							<input class="form-input-txt" type="text" name="" value="" />
 						</div>
 						<div class="form-group">
-							<label for="">医院</label>
-							<input class="form-input-txt" style="width: 200px;" type="text" name="" value="" />
+								<label for="">医院</label>
+							<div style="clear: both;display: inline-block;">
+								<select name="">
+									<option value=""></option>
+									<option value="2">2sdfsdf</option>
+									<option value="3">3sdfsdf</option>
+									<option value="4">4sdfsdf</option>
+									<option value="5">5sdfsdf</option>
+									<option value="6">6sdfsdf</option>
+								</select>
+							</div>
+							
 						</div>
 						<div class="form-group">
 							<label for="">项目经理</label>
@@ -81,6 +93,7 @@
 		<script src="../js/jquery.freezeheader.js"></script>
 		<script src="../js/table.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/jquery.page.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.combo.select.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$().ready(function() {
 
@@ -113,6 +126,7 @@
 						$('#ly').css('display', 'none');
 					}
 				}
+				$("select").comboSelect();
 			});
 		</script>
 	</body>
